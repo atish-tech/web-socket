@@ -5,7 +5,7 @@ const app = express()
 app.get('/' , (request:any , response:any) => {
   return response.status(200).json({message: "Socket api is connected"});
 })
-
+  
 let httpServer = app.listen(8080 , () => console.log("server running on port 800"));
 
 const wss = new WebSocketServer({ server: httpServer });
