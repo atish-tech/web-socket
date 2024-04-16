@@ -17,13 +17,14 @@ wss.on('connection', function connection(ws) {
     // ws.send(data , {binary: isBinary});   // data send to myself only    
 
     wss.clients.forEach((client) => {
+      
       if(client.readyState === WebSocket.OPEN) {
         client.send(data , {binary: isBinary});
       }
     } )  
   });
 
-  ws.send('Hello! Message From Express Server!!');
+  ws.send('Hello! Message From socket Server!!');
 });
 
 
