@@ -9,7 +9,7 @@ const app = (0, express_1.default)();
 app.get('/', (request, response) => {
     return response.status(200).json({ message: "Socket api is connected" });
 });
-let httpServer = app.listen(8080);
+let httpServer = app.listen(8080, () => console.log("server running on port 800"));
 const wss = new ws_1.WebSocketServer({ server: httpServer });
 wss.on('connection', function connection(ws) {
     ws.on("error", console.error);
